@@ -1,5 +1,7 @@
 package xx;
 
+import xx.math.Vec2;
+
 class Game extends hxd.App
 {
     var gfx : h2d.Graphics;
@@ -12,11 +14,11 @@ class Game extends hxd.App
 
     override function update(dt:Float) 
     {
-        c += 0.01;
+        c += 0.1;
 
         gfx.clear();
-        gfx.beginFill(0xFF00FF);
-            gfx.drawRect(100 + Math.sin(c) * 100,100 + Math.cos(c) * 100,100,100);
+        gfx.beginFill(0xAA00FF);
+            gfx.drawRect(300 + Math.sin(c) * 100,300 + Math.cos(c) * 100,100,100);
         gfx.endFill();
     }
 

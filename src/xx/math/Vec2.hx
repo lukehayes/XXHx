@@ -1,10 +1,9 @@
-package xxmath;
+package xx.math;
 
-class Vec2 extends h3d.Vector
+class Vec2
 {
     public function new(x:Float, y:Float)
     {
-        super(x,y);
         trace("Vector 2 created");
     }
 
