@@ -9,13 +9,26 @@ class Game extends hxd.App
     var entities : Array<Entity>;
 
     var txt : h2d.Text;
-    var entityCount = 100;
+    var entityCount = 10;
+
+    var batch : h2d.SpriteBatch;
+    var bmp : h2d.Bitmap;
 
     override function init() 
     {
         this.gfx = new h2d.Graphics(s2d);
 
         this.entities = new Array<Entity>();
+        this.batch = new h2d.SpriteBatch(h2d.Tile.fromColor(0x00FF00));
+
+        this.bmp = new h2d.Bitmap(h2d.Tile.fromColor(0xFF11AA));
+        this.bmp.height = 100;
+        this.bmp.width = 100;
+        this.bmp.x = 300;
+        this.bmp.y = 300;
+        s2d.addChild(this.bmp);
+
+        s2d.addChild(this.batch);
 
         // --------------------------------------------------------------------
         // UI TEXT
@@ -54,7 +67,7 @@ class Game extends hxd.App
         gfx.clear();
         for(e in this.entities)
         {
-            e.draw(gfx);
+            // e.draw(gfx);
         }
 
 
