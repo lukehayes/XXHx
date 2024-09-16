@@ -11,6 +11,7 @@ class Entity
     public var dx       : Int;
     public var dy       : Int;
     public var speed    : Int;
+    public var tile     : h2d.Tile;
 
     public function new(pos: Vec2, scale: Vec2)
     {
@@ -19,6 +20,7 @@ class Entity
         this.position = pos;
         this.scale    = scale;
         this.speed    = Random.int(30,200);
+        this.tile     = h2d.Tile.fromColor(0x00FF00);
 
         this.dx = dirs[Random.int(0,1)];
         this.dy = dirs[Random.int(0,1)];
@@ -26,6 +28,7 @@ class Entity
 
     public function update(dt:Float)
     {
+        // TODO Movement should be velocity based.
         static var c = 0.0;
         c += 0.1;
 
