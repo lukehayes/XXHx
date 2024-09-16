@@ -5,3 +5,4 @@
 -hl bin/app.hl
 -main "xx/Game.hx"
 -D no-deprecation-warnings
+-D windowSize=800x600
