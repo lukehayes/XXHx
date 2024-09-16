@@ -6,33 +6,46 @@ import xx.entity.Entity;
 class Game extends hxd.App
 {
     var gfx : h2d.Graphics;
-    static var c = 0.0;
-    
     var entities : Array<Entity>;
+
+    var txt : h2d.Text;
+    var entityCount = 100;
 
     override function init() 
     {
         this.gfx = new h2d.Graphics(s2d);
 
         this.entities = new Array<Entity>();
-        this.entities.push(new Entity(
-            new Vec2(100,400),
-            new Vec2(32,32)
-        ));
 
-        this.entities.push(new Entity(
-            new Vec2(400,100),
-            new Vec2(32,32)
-        ));
+        // --------------------------------------------------------------------
+        // UI TEXT
+        // --------------------------------------------------------------------
+        var font = hxd.res.DefaultFont.get();
+        font.resizeTo(26);
+        this.txt = new h2d.Text(font);
 
-        this.entities.push(new Entity(
-            new Vec2(200,210),
-            new Vec2(32,64)
-        ));
+        s2d.addChild(this.txt);
+
+        // --------------------------------------------------------------------
+        // Generate Entities
+        // --------------------------------------------------------------------
+        for(i in 0...entityCount)
+        {
+            var rx = Std.random(800);
+            var ry = Std.random(600);
+
+            this.entities.push(new Entity(
+                new Vec2(rx,ry),
+                new Vec2(8,8)
+            ));
+        }
     }
 
     override function update(dt:Float) 
     {
+        var fps = this.engine.fps;
+        this.txt.text = 'Entities: $entityCount. FPS $fps';
+
         for(e in this.entities)
         {
             e.update(dt);
