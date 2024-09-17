@@ -2,6 +2,7 @@ package xx;
 
 import xx.math.Vec2;
 import xx.entity.Entity;
+import xx.entity.Sprite;
 
 class Game extends hxd.App
 {
@@ -13,6 +14,8 @@ class Game extends hxd.App
 
     var batch : h2d.SpriteBatch;
     var bmp : h2d.Bitmap;
+
+    var spr : Sprite;
 
     override function init() 
     {
@@ -30,6 +33,8 @@ class Game extends hxd.App
 
         s2d.addChild(this.batch);
 
+        this.spr = new Sprite(s2d);
+        s2d.addChild(this.spr);
         // --------------------------------------------------------------------
         // UI TEXT
         // --------------------------------------------------------------------
