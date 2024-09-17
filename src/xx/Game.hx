@@ -57,7 +57,8 @@ class Game extends hxd.App
     override function update(dt:Float) 
     {
         var fps = this.engine.fps;
-        this.txt.text = 'Entities: $entityCount. FPS $fps';
+        var drawCalls = this.engine.drawCalls;
+        this.txt.text = 'Entities: $entityCount. FPS $fps. Draw Calls: $drawCalls';
 
         for(e in this.entities)
         {
