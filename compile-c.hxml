@@ -2,5 +2,5 @@
 -lib random
 -lib hlsdl
 -hl out/main.c
--main "test/Main.hx"
+-main "xx/Game.hx"
 -cp src
