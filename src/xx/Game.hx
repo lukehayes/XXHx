@@ -24,7 +24,7 @@ class Game extends hxd.App
         // this.level = new DebugLevel();
         // this.s2d = this.level;
 
-        this.spr = new Sprite();
+        this.spr = new Sprite(100,100,32);
         s2d.add(this.spr);
 
         var s2 = new Sprite();
@@ -35,6 +35,7 @@ class Game extends hxd.App
         s3.x = 200;
         s3.y = 39;
         // s3.color = h3d.Vector4.fromColor(0xF0FFFF);
+        var s2 = new Sprite(300,230, 16);
 
         s2d.add(this.spr);
         s2d.add(s2);

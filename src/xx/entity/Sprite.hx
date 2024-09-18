@@ -5,11 +5,11 @@ class Sprite extends h2d.Bitmap implements h3d.IDrawable
 {
     private var context: h2d.RenderContext;
 
-    public function new()
+    public function new(x,y, scale)
     {
-        super(h2d.Tile.fromColor(0xFFFF00, 100,100));
-        this.x = 400;
-        this.y = 400;
+        super(h2d.Tile.fromColor(0xFFFF00, scale,scale));
+        this.x = x;
+        this.y = y;
     }
 
     public function update(dt:Float)
@@ -19,8 +19,9 @@ class Sprite extends h2d.Bitmap implements h3d.IDrawable
 
     override public function draw(ctx: h2d.RenderContext)
     {
-        super.draw(ctx);
-        super.sync(ctx);
+        emitTile(ctx, tile);
+        // super.draw(ctx);
+        // super.sync(ctx);
     }
     
     public function render(engine: h3d.Engine)
